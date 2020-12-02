@@ -23,12 +23,7 @@ public class MainController {
         try{
             JSONObject json = new JSONObject(covid);
 
-            mv.addObject("Country", json.getString("Country"));
-            mv.addObject("Confirmed", json.getString("Confirmed"));
-            mv.addObject("Deaths", json.getString("Deaths"));
-            mv.addObject("Recovered", json.getString("Recovered"));
-            mv.addObject("Active", json.getString("Active"));
-
+            mv.addObject("today_confirmed", json.getJSONObject("total").get("today_confirmed").toString());
 
 
         } catch (Exception e) {
@@ -41,7 +36,7 @@ public class MainController {
     private String getCovidinfo(String id){
         try {
             //String apiKey = "cfc6ae8e";
-            URL urlForGetRequest = new URL("api.covid19api.com/live/country/" + id );
+            URL urlForGetRequest = new URL("https://api.covid19tracking.narrativa.com/api/2020-03-22/country/" + id );
 
             HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
             connection.setRequestMethod("GET");

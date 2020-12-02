@@ -13,6 +13,8 @@
         <form method=get" action="/get/">
             <select name="id">
                 <option value = "united-states">United States</option>
+                <option value = "bangladesh">Bangladesh</option>
+                <option value = "spain">Spain</option>
             </select>
 
             <input type="submit" value="Submit">
@@ -22,11 +24,8 @@
     </hr>
 
     <div>
-        <h2>Country</h2> <h3><%=request.getParameter("Country")%></h3>
-        <h2>Confirmed</h2> <h3><%=request.getParameter("Confirmed")%></h3>
-        <h2>Deaths</h2> <h3><%=request.getParameter("Deaths")%></h3>
-        <h2>Recovered</h2> <h3><%=request.getParameter("Recovered")%></h3>
-        <h2>Active</h2> <h3><%=request.getParameter("Active")%></h3>
+        <h2>Total</h2> <h3><%=request.getParameter("today_confirmed")%></h3>
+
     </div>
 
 </body>
